@@ -1,0 +1,21 @@
+{% load static %}
+{% load livereload_tags %}
+
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}?{% now 'U' %}"/>
+    </head>
+
+    <h1>These are the note: </h1>
+
+    <ul>
+        {%for note in notes%}
+        <li class="note-li">{{note.title}}</li>
+
+        {% endfor %}
+    </ul>
+</html>
+
+{% livereload_script %}
+
